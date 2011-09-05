@@ -11,6 +11,17 @@ DELETE FROM `creature` WHERE `id` = 43010;
 INSERT INTO `creature` VALUES
     (NULL, 43010, 530, 1, 1, 0, 0, 10381.4, -6422.88, 38.5315, 2.50212, 300, 0, 0, 42, 0, 0, 0, 0, 0, 0);
     
+-- Lothan Silverblade - http://www.wowhead.com/npc=43012
+DELETE FROM `creature_template` WHERE `entry` = 43012;
+INSERT INTO `creature_template` VALUES
+    (43012, 0, 0, 0, 0, 0, 33687, 0, 0, 0, 'Lothan Silverblade', 'Warrior Trainer', '', 0, 12, 12
+    , 0, 35, 35, 51, 1, 1.14286, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 7, 0
+    , 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 3, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, '', 1);
+
+DELETE FROM `creature` WHERE `id` = 43012;
+INSERT INTO `creature` VALUES    
+    (NULL, 43012, 530, 1, 1, 0, 0, 9521.21, -6865.28, 18.7487, 4.88472, 300, 0, 0, 42, 0, 0, 0, 0, 0, 0);
+    
 -- Alsudar the Bastion - Silvermoon City - http://www.wowhead.com/npc=43009
 DELETE FROM `creature_template` WHERE `entry` = 43009;
 INSERT INTO `creature_template` VALUES
