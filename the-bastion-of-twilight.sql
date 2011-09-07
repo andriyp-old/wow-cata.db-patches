@@ -81,6 +81,11 @@ INSERT INTO `creature_template` VALUES
     , 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
     , 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 3, 1250000, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 'creature_pulsing_twilight_egg', 1);
 
+-- Shadow Orb - Shadow Pulse :
+DELETE FROM `creature_template_addon` WHERE `entry` = 40100;
+INSERT INTO `creature_template_addon` VALUES
+    (40100,0,0,0,1,0,78650);
+    
 -- Calen :
 DELETE FROM `creature_template` WHERE `entry` = 46277;
 INSERT INTO `creature_template` VALUES
