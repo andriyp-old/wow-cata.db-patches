@@ -69,11 +69,16 @@ WHERE `entry` = 45213;
 
 DELETE FROM `creature_template` WHERE `entry` = 46842;
 INSERT INTO `creature_template` VALUES
-    (46842, 0, 0, 0, 0, 0, 35318, 0, 0, 0, 'Pulsing Twilight Egg', '', '', 0, 87, 87, 0, 14, 14, 0, 1, 1.14286
-    , 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
-    , 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 3, 1250000, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 'creature_pulsing_twilight_egg', 1);
+    (46842, 0, 0, 0, 0, 0, 35318, 0, 0, 0, 'Pulsing Twilight Egg', '', '', 0, 87, 87, 0, 14, 14, 0, 1, 1.14286, 1
+    , 1, 0, 0, 0, 0, 1, 0, 0, 1, 262148, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+    , 0, 0, 0, 0, 0, 0, 0, '', 0, 3, 1250000, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 'creature_pulsing_twilight_egg', 1);
 
 -- Shadow Orb :
+DELETE FROM `creature_template` WHERE `entry` = 40100;
+INSERT INTO `creature_template` VALUES
+    (40100, 0, 0, 0, 0, 0, 32754, 0, 0, 0, 'Shadow Orb', '', '', 0, 80, 80, 0, 14, 14, 0, 2.4, 0.857143, 1, 0, 0
+    , 0, 0, 0, 1, 0, 0, 1, 33554434, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 1048576, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+    , 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 3, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 106, 1, 0, 0, 0, 'creature_shadow_orb', 12340)
 
 -- shadow pulse
 DELETE FROM `creature_template_addon` WHERE `entry` = 40100;
@@ -88,6 +93,44 @@ INSERT INTO `creature_template` VALUES
     (46277, 0, 0, 0, 0, 0, 34541, 0, 0, 0, 'Calen', '', '', 0, 1, 1, 0, 35, 35, 0, 1, 1.14286, 1, 1, 0, 0, 0, 0
     , 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 4100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
     , 0, 0, 'SmartAI', 0, 3, 250, 214.823, 1, 0, 0, 0, 0, 0, 0, 0, 171, 1, 0, 0, 0, '', 1);
+
+-- speech
+DELETE FROM `creature_text` WHERE `entry` = 46277;
+INSERT INTO `creature_text`
+    (`entry`,`id`,`sound`,`text`)
+VALUES
+    (46277, 0, 21588 -- intro
+    , 'Heroes! You are not alone in this dark place!'),
+    (46277, 1, 21589 -- losing
+    , 'Heroes, power wanes...'),
+    (46277, 2, 21590 -- phase 2
+    , 'Sintharia! Your master owes me a great debt... one that I intend to extract from his consort''s hide!'),
+    (46277, 1, 21591 -- phase 3
+    , 'The fires dim, champions... Take this, the last of my power. Succeed where I have failed... Avenge me. Avenge the world...'),
+    (46277, 1, 21592 -- recharge
+    , 'Flame of life, burn within me and renew my vigor!'),
+    (46277, 1, 21593 -- winning
+    , 'You are weakening, Sintharia! Accept the inevitable.'),
+    (46277, 1, 21598 -- death
+    , 'All is lost...Forgive me, my queen...');
+
+UPDATE `creature_text` c
+  SET `probability` = 0,
+      `groupid`     = c.`id`,
+      `type`        = 1
+WHERE `entry` = 46277;
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
